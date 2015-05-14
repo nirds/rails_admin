@@ -88,6 +88,7 @@ module RailsAdmin
           end
 
           model_name = model.model.name
+          current_page = page.presence || '1'
 
           versions = version_class_for(model_name).where :item_type => model.model.name
           versions = versions.where :item_id => object.id if object
